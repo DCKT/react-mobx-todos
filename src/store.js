@@ -20,6 +20,8 @@ export class Store {
         return this.todos
       case TODOS.COMPLETED_FILTER:
         return this.todos.filter(todo => todo.completed)
+      case TODOS.REMAINING_FILTER:
+        return this.todos.filter(todo => !todo.completed)
       default:
         return this.todos
     }

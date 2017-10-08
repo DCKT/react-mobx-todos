@@ -2,6 +2,12 @@
 
 import React from 'react'
 import { observer, inject } from 'mobx-react'
+import { css } from 'glamor'
+
+const inputStyle = css({
+  padding: '0.5rem',
+  width: '200px'
+})
 
 class BaseForm extends React.Component {
   props: {
@@ -21,6 +27,7 @@ class BaseForm extends React.Component {
           onChange={this._onInputChange}
           onKeyPress={this._onInputKeyPress}
           value={this.state.value}
+          {...inputStyle}
         />
       </form>
     )
