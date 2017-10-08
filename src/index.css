@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.app {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.filter--active {
+  color: '#242424';
+}
