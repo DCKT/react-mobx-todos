@@ -1,6 +1,6 @@
 // @flow
 
-import { extendObservable, useStrict, action } from 'mobx'
+import { observable, useStrict, action } from 'mobx'
 
 /**
  * Models
@@ -10,13 +10,10 @@ import { Todo } from './models/'
 useStrict(true)
 
 export class Store {
-  constructor () {
-    extendObservable(this, {
-      todos: []
-    })
-  }
+  @observable todos = [];
 
-  addTodo = action('TODOS -> ADD', function (title: string) {
+  @action('TODOS -> ADD')
+  addTodo (title: string) {
     this.todos.push(new Todo(title))
-  });
+  }
 }

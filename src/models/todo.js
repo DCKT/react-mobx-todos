@@ -1,15 +1,18 @@
-import { extendObservable, action } from 'mobx'
+import { observable, action } from 'mobx'
 
 export class Todo {
+  id;
+  @observable title;
+  @observable completed;
+
   constructor (title, completed = false) {
-    extendObservable(this, {
-      title,
-      completed
-    })
+    this.title = title
+    this.completed = completed
     this.id = Date.now()
   }
 
-  setCompleted = action('TODO -> SET_COMPLETED', function (state) {
+  @action('TODO -> SET_COMPLETED')
+  setCompleted (state) {
     this.completed = state
-  });
+  }
 }
