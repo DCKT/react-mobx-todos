@@ -1,3 +1,5 @@
+// @flow
+
 import { observable, action } from 'mobx'
 
 export class Todo {
@@ -12,7 +14,14 @@ export class Todo {
   }
 
   @action('TODO -> SET_COMPLETED')
-  setCompleted (state) {
+  setCompleted (state: boolean) {
     this.completed = state
+  }
+
+  @action('TODO -> EDIT')
+  setTitle (title: string) {
+    this.title = title
+
+    return Promise.resolve()
   }
 }

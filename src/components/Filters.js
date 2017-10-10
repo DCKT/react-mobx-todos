@@ -15,7 +15,8 @@ const filterStyle = isActive =>
     fontSize: '1.1rem',
     color: isActive ? '#242424' : '#2196F3',
     textDecoration: isActive ? 'none' : 'underline',
-    cursor: isActive ? 'default' : 'pointer'
+    cursor: isActive ? 'default' : 'pointer',
+    fontWeight: isActive ? 'bold' : 'normal'
   })
 
 const BaseFilters = ({ store }: Object) => (
