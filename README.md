@@ -1,5 +1,4 @@
 # REACT-MOBX-TODOS
-----
 
 Simple demo for testing Mobx.
 
